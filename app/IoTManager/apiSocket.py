@@ -33,4 +33,4 @@ class ApiSocket:
             return
 
     def run(self):
-        self.app.run(debug=True, port=5000, host="0.0.0.0")
+        self.app.run(debug=False, port=5000, host="0.0.0.0")
