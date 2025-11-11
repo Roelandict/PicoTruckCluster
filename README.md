@@ -1,5 +1,7 @@
 # Calculator app
+### Status code:
 
+[![CodeFactor](https://www.codefactor.io/repository/github/roelandict/picotruckcluster/badge)](https://www.codefactor.io/repository/github/roelandict/picotruckcluster)
 
 
 ## structure
