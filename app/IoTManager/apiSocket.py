@@ -1,4 +1,5 @@
 import flask
+import os
 from main import Item
 
 class ApiSocket:
@@ -33,4 +34,9 @@ class ApiSocket:
             return
 
     def run(self):
-        self.app.run(debug=True, port=5000, host="0.0.0.0")
+        # Use environment variable for host, defaulting to 0.0.0.0 for container networking
+        # In production, this should be controlled via container orchestration
+        host = os.getenv('FLASK_HOST', '0.0.0.0')
+        port = int(os.getenv('FLASK_PORT', '5000'))
+        debug = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
+        self.app.run(debug=debug, port=port, host=host)
